@@ -120,14 +120,14 @@ const AdminModify = () => {
   return (
     <div className={styles.main}>
       <nav>
-        <a href="/auth/admin" className={styles.backButton}>
+        <a href='/auth/admin' className={styles.backButton}>
           Back
         </a>
       </nav>
       {user !== null &&
         user.map((user) => (
           <div key={user.id} className={styles.user}>
-            <form onSubmit={handleSubmit(onSubmit)} method="PUT">
+            <form onSubmit={handleSubmit(onSubmit)} method='PUT'>
               <strong>Role: </strong>
               <input
                 defaultValue={user.role}
@@ -144,7 +144,7 @@ const AdminModify = () => {
                 aria-invalid={errors.role ? 'true' : 'false'}
               />
               {errors.role && (
-                <p role="alert" className={styles.errorMsg}>
+                <p role='alert' className={styles.errorMsg}>
                   {errors.role.message}
                 </p>
               )}
@@ -182,13 +182,13 @@ const AdminModify = () => {
               </p>
               <input
                 className={styles.modifyButton}
-                type="submit"
+                type='submit'
                 value={'Add changes'}
               />
               {submitMessage && <p>{submitMessage}</p>}
             </form>
-            <form onSubmit={handleDeleteSubmit(onSubmitDelete)} method="DELETE">
-              <button type="submit" className={styles.deleteButton}>
+            <form onSubmit={handleDeleteSubmit(onSubmitDelete)} method='DELETE'>
+              <button type='submit' className={styles.deleteButton}>
                 <input
                   {...registerDelete('id')}
                   defaultValue={user.id}

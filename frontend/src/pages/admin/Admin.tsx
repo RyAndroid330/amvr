@@ -26,7 +26,6 @@ const Admin = () => {
     fetchData();
   }, []);
 
-<<<<<<< HEAD
   // useEffect(() => {
   //   if (!cursor) {
   //     return;
@@ -46,32 +45,6 @@ const Admin = () => {
   //       console.error(error);
   //     }
   //   };
-=======
-  useEffect(() => {
-    if (!cursor) {
-      return;
-    }
-    const fetchMoreData = async () => {
-      try {
-        const response = await fetch(`/api/admin/?createdAt=${cursor}`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        console.log('Fetch more data: ', data);
-        console.log('Fetch more data cursor: ', data[0].nextCursor.createdAt);
-        setCursor(data[0].nextCursor.createdAt);
-        setResult((previousData: Data[] | null) => {
-          if (previousData === null) {
-            return data;
-          }
-          return [...previousData, ...data];
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    };
->>>>>>> 61f5a4563ee2d4890a61d400fbf7fddd6289af6c
 
   //   fetchMoreData();
   // }, [cursor]);
