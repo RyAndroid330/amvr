@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: backend
+    depends_on:
+      my-postgres:
+        condition: service_healthy
+    environment:
+      - PGURI=postgres://postgres:password@my-postgres/mydatabase
+    ports:
+      - '3000:3000'
+
+  my-postgres:
+    image: postgres:latest
+    platform: linux/amd64
+    healthcheck:
+      interval: 1s
+      test: 'pg_isready --username=postgres'
+    env_file:
+      - .env.docker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - '5433:5432'
+
+volumes:
+  postgres_data:

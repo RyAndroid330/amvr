@@ -8,7 +8,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const postRoutes = require('./routes/postRoutes');
 const profileRoutes = require('./routes/profile');
 const authRoutes = require('./routes/authRoutes');
-const newUserRoutes = require('./routes/newUserRoutes')
+const newUserRoutes = require('./routes/newUserRoutes');
 
 dotenv.config();
 
@@ -26,7 +26,7 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/posts', postRoutes); // Keep more general routes last
 
 // For building dist
-// app.use(express.static(path.join(path.resolve(), 'dist')));
+app.use(express.static(path.join(path.resolve(), 'dist')));
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
