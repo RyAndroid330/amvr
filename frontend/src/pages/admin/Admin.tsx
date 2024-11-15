@@ -40,7 +40,12 @@ const Admin = () => {
         console.log('Fetch more data: ', data);
         console.log('Fetch more data cursor: ', data[0].nextCursor.createdAt);
         setCursor(data[0].nextCursor.createdAt);
-        setResult((previousData) => [...previousData, data]);
+        setResult((previousData: Data[] | null) => {
+          if (previousData === null) {
+            return data;
+          }
+          return [...previousData, ...data];
+        });
       } catch (error) {
         console.error(error);
       }

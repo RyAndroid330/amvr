@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Dialog, Button, Flex, Text } from '@radix-ui/themes';
+import { Dialog, Button, Flex } from '@radix-ui/themes';
 
 interface UserAgreementDialogProps {
   open: boolean;

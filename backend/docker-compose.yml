@@ -2,8 +2,8 @@ services:
   my-postgres:
     image: postgres:latest
     platform: linux/amd64
-    env_file:
-      - .env.docker
+#    env_file:
+ #     - .env.docker
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -12,3 +12,4 @@ services:
 
 volumes:
   postgres_data:
+

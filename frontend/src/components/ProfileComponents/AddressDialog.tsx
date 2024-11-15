@@ -94,12 +94,12 @@ const AddressDialog: FC<AddressDialogProps> = ({
           </div>
         </Dialog.Description>
         <Flex gap='3' mt='4' justify='end'>
-          <Dialog.Close asChild>
+          <Dialog.Close>
             <Button variant='soft' color='gray' onClick={onClose}>
               Cancel
             </Button>
           </Dialog.Close>
-          <Dialog.Close asChild>
+          <Dialog.Close>
             <Button type='button' onClick={handleSave}>
               Save
             </Button>

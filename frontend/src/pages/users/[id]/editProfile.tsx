@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+ import { FC, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './profile.module.css';
@@ -9,10 +9,14 @@ import AddressDialog from '../../../components/ProfileComponents/AddressDialog';
 interface User {
   role: string;
   firstName: string;
+  first_name: string;
   lastName: string;
+  last_name: string;
   emailAddress: string;
+  email_address: string;
   password?: string;
   dateOfBirth: string;
+  date_of_birth: string;
   address?: string;
   id: string;
   gdpr: boolean;
@@ -213,3 +217,4 @@ const EditProfile: FC = () => {
 };
 
 export default EditProfile;
+
