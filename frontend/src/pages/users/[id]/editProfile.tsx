@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+ import { FC, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './profile.module.css';
@@ -217,3 +217,4 @@ const EditProfile: FC = () => {
 };
 
 export default EditProfile;
+
